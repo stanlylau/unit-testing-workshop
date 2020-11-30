@@ -30,19 +30,6 @@ describe('learn about matchers', () => {
         expect(() => drinkCoffee("frappuccino")).toThrowError('yuck, this is a sugar drink')
     })
 
-    it('assert a mocked function has been called', () => {
-        const callback = jest.fn();
-
-        sendEmail("A message", callback)
-
-        expect(callback).toHaveBeenCalled()
-        expect(callback).toHaveBeenCalledWith({sent: true})
-    })
-
-    function sendEmail(message, callback) {
-        callback({sent: true})
-    }
-
     function drinkFrappuccino() {
         drinkCoffee('frappuccino')
     }
