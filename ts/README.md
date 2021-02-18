@@ -1,4 +1,4 @@
-## If you are using npm (tested on v7.5.4)
+## NPM tested on v7.5.4
 
 `npm i` to install dependencies
 
