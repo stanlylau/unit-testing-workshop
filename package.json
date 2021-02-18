@@ -2,13 +2,15 @@
   "name": "js-jest",
   "version": "1.0.0",
   "description": "",
-  "main": "sum.js",
+  "main": "",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:cov": "jest --collectCoverage"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^26.4"
+    "jest": "^26.6"
   }
 }

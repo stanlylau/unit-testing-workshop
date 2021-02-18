@@ -1,15 +1,23 @@
-## If you are using yarn
+## NPM public registry (for reference)
+
+`npm config set registry https://registry.npmjs.org`
+
+## If you are using yarn (tested on v1.22.5)
 
 `yarn` to setup
 
 `yarn test` to run all tests
 
-`yarn test path_to_test_file --watch` to keep tests running upon save
+`yarn test:watch path_to_test_file` to keep tests running upon save for a specific file
 
-## If you are using npm
+`yarn test:cov` to generate code coverage report
+
+## If you are using npm (tested on v7.5.4)
 
 `npm install` to setup
 
 `npm test` to run all tests
 
-`npm test path_to_test_file -- --watchAll` to keep tests running upon save
+`npm run test:watch path_to_test_file` to keep tests running upon save for a specific file
+
+`npm run test:cov` to generate code coverage report
