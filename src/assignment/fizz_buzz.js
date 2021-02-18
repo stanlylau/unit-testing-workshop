@@ -10,7 +10,5 @@ function say(number) {
 
     return number
 }
-  
-module.exports = {
-  say
-}
+
+export default say

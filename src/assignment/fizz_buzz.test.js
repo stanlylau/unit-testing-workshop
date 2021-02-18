@@ -1,4 +1,4 @@
-const { say } = require("./fizz_buzz.js")
+import say from './fizz_buzz'
 
 /**
  * Please write unit tests to cover the logic of say().
@@ -8,5 +8,4 @@ describe("Fizz Buzz", () => {
   it('a sample test', () => {
     expect(true).toBeTruthy()
   })
-});
-
+})

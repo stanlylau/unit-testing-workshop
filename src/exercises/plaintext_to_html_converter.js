@@ -1,65 +1,62 @@
-const notifier = require("./notifier.js")
-const fs = require('fs')
-const path = require("path")
-
+import notify from './notifier'
+import fs from 'fs'
+import path from 'path'
 class PlaintextToHtmlConverter {
     toHtml() {
         const text = fs.readFileSync(path.join(__dirname, 'sample.txt'), 'utf8')
         const htmlLines = this._basicHtmlEncode(text)
-        notifier.notify('HTML encoding done.')
+        notify('HTML encoding done.')
         return htmlLines
     }
 
     _basicHtmlEncode(source) {
-        var stashNextCharacterAndAdvanceThePointer = () => {
+        const stashNextCharacterAndAdvanceThePointer = () => {
             var c = source.charAt(i)
             i += 1
             return c
 
         };
 
-        var addANewLine = () => {
+        const addANewLine = () => {
             convertedLine = convertedLine.join('')
             result.push(convertedLine)
             convertedLine = []
         };
 
-        var pushACharacterToTheOutput = () => {
-            convertedLine.push(characterToConvert);
+        const pushACharacterToTheOutput = () => {
+            convertedLine.push(characterToConvert)
         };
 
-        var i = 0;
-        var result = [];
-        var convertedLine = [];
-        var characterToConvert = stashNextCharacterAndAdvanceThePointer();
+        let i = 0
+        let result = []
+        let convertedLine = []
+        let characterToConvert = stashNextCharacterAndAdvanceThePointer();
         while (i <= source.length) {
 
             switch (characterToConvert) {
                 case '<':
-                    convertedLine.push('&lt;');
-                    break;
+                    convertedLine.push('&lt;')
+                    break
                 case '>':
-                    convertedLine.push('&gt;');
-                    break;
+                    convertedLine.push('&gt;')
+                    break
                 case '&':
-                    convertedLine.push('&amp;');
-                    break;
+                    convertedLine.push('&amp;')
+                    break
                 case '\n':
-                    addANewLine();
+                    addANewLine()
                     break;
                 default:
-                    pushACharacterToTheOutput();
+                    pushACharacterToTheOutput()
             }
 
-            characterToConvert = stashNextCharacterAndAdvanceThePointer();
+            characterToConvert = stashNextCharacterAndAdvanceThePointer()
         }
 
         addANewLine();
-        result = result.join('<br />');
-        return result;
+        result = result.join('<br />')
+        return result
     }
 }
 
-module.exports = {
-    PlaintextToHtmlConverter
-}
+export { PlaintextToHtmlConverter }

@@ -1,4 +1,4 @@
-const { Shop, Item } = require("./gilded_rose.js")
+import { Shop, Item } from './gilded_rose'
 
 describe("Gilded Rose", () => {
   it("should foo", () => {
@@ -7,5 +7,5 @@ describe("Gilded Rose", () => {
     expect(items[0].name).toBe("Aged Brie")
     expect(items[0].sellIn).toEqual(1)
     expect(items[0].quality).toEqual(1)
-  });
-});
+  })
+})

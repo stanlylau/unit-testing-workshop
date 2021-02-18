@@ -3,7 +3,7 @@ function validBraces(input) {
       throw new Error('Please provide an input')
   
     let stack = []
-    for(ch of Array.from(input)) {
+    for(let ch of Array.from(input)) {
   
       if (ch === '[' || ch === '{' || ch === '(')
         stack.push(input[0])
@@ -18,6 +18,4 @@ function validBraces(input) {
     return stack.length === 0
   }
   
-  module.exports = {
-    validBraces
-  }
+  export default validBraces 
