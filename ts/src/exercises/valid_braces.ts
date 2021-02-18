@@ -1,0 +1,21 @@
+function validBraces(input: string) {
+    if (input == '')
+      throw new Error('Please provide an input')
+  
+    let stack = []
+    for(let ch of Array.from(input)) {
+  
+      if (ch === '[' || ch === '{' || ch === '(')
+        stack.push(input[0])
+    
+      if (ch === ']' || ch === '}' || ch === ')') {
+        if (stack.length === 0) {
+          return false
+        }
+        stack.pop()
+      }
+    }
+    return stack.length === 0
+  }
+  
+  export default validBraces 

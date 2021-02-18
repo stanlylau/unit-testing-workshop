@@ -1,10 +1,6 @@
-## NPM public registry (for reference)
-
-`npm config set registry https://registry.npmjs.org`
-
 ## If you are using npm (tested on v7.5.4)
 
-`npm install` to setup
+`npm i` to install dependencies
 
 `npm test` to run all tests
 
